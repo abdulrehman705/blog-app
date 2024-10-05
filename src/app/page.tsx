@@ -2,6 +2,7 @@ import { getBlog } from "@/actions";
 import User from "@/assets/icons/user.svg";
 import Header from "@/components/header";
 import Link from "next/link";
+import Image from "next/image";
 import DeleteButton from "@/components/deleteButton";
 
 const Blogs = async () => {
@@ -22,9 +23,11 @@ const Blogs = async () => {
           <Link href={`/blog/${post.id}`} key={post.id}>
             <div className="p-6">
               <div className="flex items-center mb-4">
-                <img
+                <Image
                   src={post?.useProfilePicture ? post?.useProfilePicture : User}
                   alt="user"
+                  width={100}
+                  height={100}
                   className="h-6 w-6 text-gray-400 mr-2"
                 />
                 <span className="text-sm text-gray-600 font-medium">
@@ -55,7 +58,7 @@ const Blogs = async () => {
                 </div>
                 {post.image && (
                   <div className="flex-shrink-0">
-                    <img
+                    <Image
                       src={post.image}
                       alt="Blog post illustration"
                       width={100}

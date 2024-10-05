@@ -51,8 +51,8 @@ const BlogDetails = async ({ id: BlogId }: { id: string }) => {
       </header>
 
       <div className="mb-8">
-        <img
-          src={post.image}
+        <Image
+          src={post.image || ''}
           alt={`Cover image for ${post.title}`}
           width={800}
           height={400}
